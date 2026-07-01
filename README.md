@@ -1,6 +1,6 @@
 # Mi Laboratorio de Automatización e IA 🚀
 
-¡Hola! En este repositorio voy a ir subiendo los planos (blueprints) de las automatizaciones No-Code que desarrollo en mi curso.
+¡Hola! En este repositorio voy a ir subiendo los planos (blueprints) de las automatizaciones No-Code que desarrollo en mi curso. 
 
 ## Proyecto 1: Clasificador de Correos con IA
 * **Herramienta usada:** Make 
