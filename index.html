@@ -3,102 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pablo Ortega Insúa | Especialista en IA y Automatización</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: #334155;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-        .card {
-            background: #ffffff;
-            padding: 35px 25px;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            text-align: center;
-            max-width: 360px;
-            width: 100%;
-            border-top: 5px solid #3b82f6; /* Detalle azul tecnológico */
-        }
-        .profile-img {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #3b82f6;
-            margin-bottom: 15px;
-            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.2);
-        }
-        h1 {
-            font-size: 24px;
-            margin: 10px 0 5px 0;
-            color: #0f172a; /* Azul muy oscuro para el nombre */
-            font-weight: 700;
-        }
-        .subtitle {
-            font-size: 14px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            color: #3b82f6; /* Azul corporativo */
-            margin-bottom: 15px;
-        }
-        .description {
-            font-size: 15px;
-            color: #64748b;
-            line-height: 1.5;
-            margin-top: 0;
-            margin-bottom: 25px;
-        }
-        .btn {
-            display: block;
-            background-color: #0f172a; /* Botón primario serio/elegante */
-            color: white;
-            padding: 12px;
-            margin: 12px 0;
-            border-radius: 10px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 15px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px rgba(15, 23, 42, 0.1);
-        }
-        .btn:hover {
-            background-color: #1e293b;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(15, 23, 42, 0.15);
-        }
-        .btn-highlight {
-            background-color: #3b82f6; /* Botón de contacto llamativo */
-        }
-        .btn-highlight:hover {
-            background-color: #2563eb;
-            box-shadow: 0 6px 12px rgba(59, 130, 246, 0.3);
-        }
-    </style>
+    <meta name="description" content="AI Resolution - Consultoría de soluciones digitales y automatizaciones con Inteligencia Artificial para PyMEs. Optimiza tu negocio hoy.">
+    <title>AI Resolution | Soluciones Digitales e IA para PyMEs</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <!-- Google Fonts: Outfit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Cabecera de navegación -->
+    <header class="main-header" id="header">
+        <div class="container header-container">
+            <a href="#" class="logo" id="logo-link">
+                <span class="logo-text-bold">AI</span><span class="logo-text-light">Resolution</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <ul>
+                    <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#nosotros" class="nav-link">Sobre Nosotros</a></li>
+                    <li><a href="https://cal.com/pablo-ortega-insua-wdoysa" target="_blank" data-cal-link="pablo-ortega-insua-wdoysa" data-cal-config='{"layout":"month_view"}' class="nav-link nav-btn" id="contact-nav-btn">Hablemos</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
 
-    <div class="card">
-       
-        <img src="perfil.png" alt="Pablo Ortega Insúa" class="profile-img">
-        
-        <h1>Pablo Ortega Insúa</h1>
-        <div class="subtitle">IA & Automatización No-Code</div>
-        
-        <p class="description">Ayudo a empresas a optimizar tiempo y reducir costes diseñando ecosistemas inteligentes y automatizaciones eficientes.</p>
-        
-        <a href="https://www.linkedin.com/in/pablo-ortega-ins%C3%BAa-775b92277/" target="_blank" class="btn">Conectar en LinkedIn</a>
-        <a href="mailto:portegainsprofesional@gmail.com" class="btn">Escríbeme por Email</a>
-        <a href="https://cal.com/pablo-ortega-insua-wdoysa" target="_blank" class="btn btn-highlight">Reserva una cita conmigo 📅</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSdrmzbmogeYnWFf9AwoHH5opwxhzkVPNFdCpysFdugMTDJw6Q/viewform?usp=publish-editor" target="_blank" class="btn btn-highlight">Automatiza tu Negocio 🚀</a>
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero-section" id="inicio">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span class="hero-tagline">Consultoría Digital + IA</span>
+                    <h1 class="hero-title">Impulsamos tu PyME con <span class="text-gradient">Inteligencia Artificial</span></h1>
+                    <p class="hero-description">Automatizamos tus procesos repetitivos, optimizamos tus operaciones y creamos soluciones digitales a medida para llevar tu negocio al siguiente nivel.</p>
+                </div>
+                <div class="hero-visual">
+                    <!-- Un gráfico o elemento visual minimalista con CSS -->
+                    <div class="tech-card-wrapper">
+                        <div class="tech-card" id="tech-card-1">
+                            <div class="tech-icon">⚡</div>
+                            <h3>Automatización</h3>
+                            <p>Flujos de trabajo eficientes sin intervención manual.</p>
+                        </div>
+                        <div class="tech-card" id="tech-card-2">
+                            <div class="tech-icon">🧠</div>
+                            <h3>Modelos de IA</h3>
+                            <p>Integración de procesamiento de datos inteligente.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Sección de Servicios -->
+        <section class="services-section" id="servicios">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Qué hacemos</span>
+                    <h2>Soluciones diseñadas para el crecimiento de tu PyME</h2>
+                    <p>Diseñamos e implementamos tecnologías que eliminan la fricción operativa y aumentan tu rentabilidad.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card" id="service-consulting">
+                        <div class="service-icon-bg">
+                            <span class="service-icon">🤝</span>
+                        </div>
+                        <h3>Consultoría Estratégica</h3>
+                        <p>Analizamos tu negocio para identificar cuellos de botella y diseñar una hoja de ruta hacia la transformación digital.</p>
+                    </div>
+
+                    <div class="service-card" id="service-automation">
+                        <div class="service-icon-bg">
+                            <span class="service-icon">⚙️</span>
+                        </div>
+                        <h3>Automatización de Procesos</h3>
+                        <p>Conectamos tus aplicaciones (CRM, bases de datos, email) para automatizar flujos y ahorrar cientos de horas al mes.</p>
+                    </div>
+
+                    <div class="service-card" id="service-ai-integration">
+                        <div class="service-icon-bg">
+                            <span class="service-icon">🤖</span>
+                        </div>
+                        <h3>Integración de IA</h3>
+                        <p>Implementamos chatbots inteligentes de atención al cliente, análisis de datos con IA y asistentes personalizados.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Sobre Nosotros -->
+        <section class="about-section" id="nosotros">
+            <div class="container about-container">
+                <div class="about-content">
+                    <span class="section-tag">Sobre Nosotros</span>
+                    <h2>Tecnología avanzada hecha simple</h2>
+                    <p>En <strong>AI Resolution</strong> creemos que la Inteligencia Artificial y la digitalización no deben ser exclusivas de las grandes corporaciones. Nuestra misión es democratizar estas herramientas para que las PyMEs compitan al más alto nivel.</p>
+                    <p>Nos enfocamos en resultados tangibles: menos tareas manuales, mejor atención a tus clientes y decisiones basadas en datos.</p>
+                    
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Enfoque PyME</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Automatización activa</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="profile-card">
+                        <img src="pablo.jpg" alt="Pablo - Fundador de AI Resolution" class="profile-img">
+                        <div class="profile-info">
+                            <span class="profile-name">Pablo</span>
+                            <span class="profile-title">Fundador & Consultor Principal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Contacto -->
+        <section class="contact-section" id="contacto">
+            <div class="container">
+                <div class="contact-wrapper">
+                    <div class="contact-info">
+                        <span class="section-tag">Contacto</span>
+                        <h2>¿Listo para optimizar tu PyME?</h2>
+                        <p>Escríbenos directamente o, si prefieres ahorrar tiempo, agenda una sesión de diagnóstico de 30 minutos directamente en mi calendario.</p>
+                        <div class="contact-details" style="margin-bottom: 2rem;">
+                            <div class="contact-item">
+                                <span class="contact-icon">📧</span>
+                                <a href="mailto:info@airesolutionlabs.com" id="email-link">info@airesolutionlabs.com</a>
+                            </div>
+                            <div class="contact-item">
+                                <span class="contact-icon">🌐</span>
+                                <a href="https://airesolutionlabs.com" target="_blank" rel="noopener" id="web-link">www.airesolutionlabs.com</a>
+                            </div>
+                        </div>
+                         <a href="https://cal.com/pablo-ortega-insua-wdoysa" target="_blank" data-cal-link="pablo-ortega-insua-wdoysa" data-cal-config='{"layout":"month_view"}' class="btn btn-secondary" id="contact-cal-btn" style="color: var(--text-light); border-color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.08); width: 100%; display: inline-flex;">📅 Agendar Cita Online</a>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form" id="contact-form" action="#" method="POST">
+                            <div class="form-group">
+                                <label for="name">Nombre completo</label>
+                                <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Correo electrónico</label>
+                                <input type="email" id="email" name="email" required placeholder="tu@empresa.com">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">¿En qué te podemos ayudar?</label>
+                                <textarea id="message" name="message" rows="4" required placeholder="Cuéntanos un poco sobre tu PyME y qué procesos te gustaría automatizar u optimizar..."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block" id="form-submit-btn">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="main-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <a href="#" class="logo" id="footer-logo-link">
+                    <span class="logo-text-bold">AI</span><span class="logo-text-light">Resolution</span>
+                </a>
+                <p class="footer-tagline">Soluciones digitales inteligentes para el negocio de hoy.</p>
+            </div>
+            <div class="footer-right">
+                <p>&copy; 2026 AI Resolution. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script de interactividad -->
+    <script src="index.js"></script>
+
+    <!-- Integración del Chatbot de Botpress (Burbuja flotante en parte inferior izquierda) -->
+    <script src="https://cdn.botpress.cloud/webchat/v3.6/inject.js"></script>
+    <script src="https://files.bpcontent.cloud/2026/07/04/10/20260704105618-X1NTA8JG.js" defer></script>
 </body>
 </html>
