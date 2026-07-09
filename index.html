@@ -599,7 +599,7 @@
                     <polyline points="16 6 12 2 8 6"/>
                     <line x1="12" y1="2" x2="12" y2="15"/>
                 </svg>
-                Compartir
+                <span id="share-btn-text">Compartir</span>
             </button>
         </div>
     </div>
@@ -654,28 +654,74 @@
             showToast("¡Contacto descargado con éxito!");
         }
 
-        // Función para compartir la tarjeta (copiar enlace)
-        function shareCard() {
-            // Copiar el enlace actual de la página
+        // Función para compartir la tarjeta (Web Share API con Fallback)
+        async function shareCard() {
             const cardUrl = window.location.href;
-            
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(cardUrl)
-                    .then(() => showToast("¡Enlace de tarjeta copiado!"))
-                    .catch(() => fallbackCopy(cardUrl));
+            const shareData = {
+                title: 'Pablo Ortega Insúa | Especialista en IA y Automatización No-Code',
+                text: 'Echa un vistazo a mi tarjeta de visita digital interactiva. Ayudo a empresas a optimizar tiempo y reducir costes con IA.',
+                url: cardUrl
+            };
+
+            // Detección de soporte de la Web Share API
+            if (navigator.share) {
+                try {
+                    await navigator.share(shareData);
+                } catch (error) {
+                    // Capturar de forma silenciosa AbortError (cuando el usuario cierra el menú sin compartir)
+                    if (error.name !== 'AbortError') {
+                        console.error('Error al compartir:', error);
+                    }
+                }
             } else {
-                fallbackCopy(cardUrl);
+                // Fallback: Copiar URL al portapapeles y dar feedback en la UI
+                copyToClipboardFallback(cardUrl);
             }
         }
 
-        function fallbackCopy(text) {
+        // Mecanismo de respaldo (fallback) para copiar al portapapeles y dar feedback visual rápido en el botón
+        function copyToClipboardFallback(text) {
+            const btnTextNode = document.getElementById('share-btn-text');
+            const originalText = btnTextNode ? btnTextNode.textContent : 'Compartir';
+
+            const handleFeedback = () => {
+                if (btnTextNode) {
+                    btnTextNode.textContent = '¡Enlace copiado!';
+                    // Restaurar el texto del botón tras 2 segundos
+                    setTimeout(() => {
+                        btnTextNode.textContent = originalText;
+                    }, 2000);
+                }
+                showToast("¡Enlace de tarjeta copiado al portapapeles!");
+            };
+
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text)
+                    .then(handleFeedback)
+                    .catch(() => fallbackLegacyCopy(text, handleFeedback));
+            } else {
+                fallbackLegacyCopy(text, handleFeedback);
+            }
+        }
+
+        // Último recurso de copiado para navegadores antiguos
+        function fallbackLegacyCopy(text, callback) {
             const tempInput = document.createElement("input");
             tempInput.value = text;
+            tempInput.style.position = 'absolute';
+            tempInput.style.left = '-9999px';
             document.body.appendChild(tempInput);
             tempInput.select();
-            document.execCommand("copy");
-            document.body.removeChild(tempInput);
-            showToast("¡Enlace de tarjeta copiado!");
+            
+            try {
+                document.execCommand("copy");
+                callback();
+            } catch (err) {
+                console.error('No se pudo copiar el enlace:', err);
+                showToast("Error al copiar el enlace.");
+            } finally {
+                document.body.removeChild(tempInput);
+            }
         }
 
         // Mostrar notificación tipo Toast
